@@ -4,20 +4,20 @@
 \alias{design_cont}
 \title{Design the clinical trial for continuous outcome}
 \usage{
-design_cont(delta0, delta1, alpha, beta, K, frac)
+design_cont(delta0, delta1, alpha, beta, k, frac)
 }
 \arguments{
-\item{delta0}{Standardized effect size in ineffective arm.}
+\item{delta0}{numeric Standardized effect size in ineffective arm.}
 
-\item{delta1}{Standardized effect size in effective arm.}
+\item{delta1}{numeric Standardized effect size in effective arm.}
 
-\item{alpha}{Type I error.}
+\item{alpha}{numeric Type I error.}
 
-\item{beta}{Type II error.}
+\item{beta}{numeric Type II error.}
 
-\item{K}{Number of treatment arms.}
+\item{k}{numeric Number of treatment arms.}
 
-\item{frac}{Vector of fractions for information time at each look.}
+\item{frac}{numeric Vector of fractions for information time at each look.}
 }
 \value{
 List of cumulative sample size for each stage of treatment and control groups along with maximum total sample size of the trial. It also provides efficacy and futility boundaries of the trial.
@@ -26,5 +26,5 @@ List of cumulative sample size for each stage of treatment and control groups al
 This function generates the design parameters of a clinical trial for continuous outcome.
 }
 \examples{
-design_cont(delta0=0.178,delta1=0.545,alpha = 0.05, beta = 0.1, K = 4,frac=c(1/2,1))
+design_cont(delta0 = 0.178, delta1 = 0.545, alpha = 0.05, beta = 0.1, k = 4, frac = c(1 / 2, 1))
 }

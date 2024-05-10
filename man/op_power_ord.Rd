@@ -4,26 +4,26 @@
 \alias{op_power_ord}
 \title{Provides operating characteristics of group sequential MAMS trial for ordinal outcome}
 \usage{
-op_power_ord(alpha, beta, K, frac, or0, or, nsim, prob, seed)
+op_power_ord(alpha, beta, p, frac, or0, or, nsim, prob, seed)
 }
 \arguments{
-\item{alpha}{Type I error.}
+\item{alpha}{numeric Type I error.}
 
-\item{beta}{Type II error.}
+\item{beta}{numeric Type II error.}
 
-\item{K}{Number of treatment arms.}
+\item{p}{numeric Number of treatment arms.}
 
-\item{frac}{Vector of fractions for information time at each look.}
+\item{frac}{numeric Vector of fractions for information time at each look.}
 
-\item{or0}{Odds ratio of ineffective treatment group vs control.}
+\item{or0}{numeric Odds ratio of ineffective treatment group vs control.}
 
-\item{or}{Odds ratio of effective treatment group vs control.}
+\item{or}{numeric Odds ratio of effective treatment group vs control.}
 
-\item{nsim}{Number of simulations.}
+\item{nsim}{numeric Number of simulations.}
 
-\item{prob}{Probability of ordinal outcomes in control group.}
+\item{prob}{numeric Probability of ordinal outcomes in control group.}
 
-\item{seed}{Random seed number.}
+\item{seed}{numeric Random seed number.}
 }
 \value{
 A list of power, stage-wise probability of success, average sample size used per arm, stopping probability, probability of futility.
@@ -32,5 +32,13 @@ A list of power, stage-wise probability of success, average sample size used per
 Computes power and other characteristics for group-sequential MAMS trial for ordinal outcome.
 }
 \examples{
-op_power_ord(0.05,0.1,4,c(0.5,1),1.32,3.06,12,c(0.075, 0.182, 0.319, 0.243, 0.015, 0.166),13)
+op_power_ord(alpha = 0.05,
+             beta = 0.1,
+             p = 4,
+             frac = c(0.5, 1),
+             or0 = 1.32,
+             or = 3.06,
+             nsim = 12,
+             prob = c(0.075, 0.182, 0.319, 0.243, 0.015, 0.166),
+             seed = 13)
 }

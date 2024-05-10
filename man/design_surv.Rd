@@ -4,30 +4,30 @@
 \alias{design_surv}
 \title{Design the clinical trial for survival outcome}
 \usage{
-design_surv(m0, alpha, beta, K, HR0, HR1, ta, tf, kappa, eta, frac)
+design_surv(m0, alpha, beta, k, hr0, hr1, ta, tf, kappa, eta, frac)
 }
 \arguments{
-\item{m0}{Median survival time of control group.}
+\item{m0}{numeric Median survival time of control group.}
 
-\item{alpha}{Type I error.}
+\item{alpha}{numeric Type I error.}
 
-\item{beta}{Type II error.}
+\item{beta}{numeric Type II error.}
 
-\item{K}{Number of treatment arms.}
+\item{k}{numeric Number of treatment arms.}
 
-\item{HR0}{Hazard ratio of ineffective treatment group vs control.}
+\item{hr0}{numeric Hazard ratio of ineffective treatment group vs control.}
 
-\item{HR1}{Hazard ratio of effective treatment group vs control.}
+\item{hr1}{numeric Hazard ratio of effective treatment group vs control.}
 
-\item{ta}{Accrual time.}
+\item{ta}{numeric Accrual time.}
 
-\item{tf}{Follow-up time.}
+\item{tf}{numeric Follow-up time.}
 
-\item{kappa}{Shape parameter (kappa=1 for exponential distribution).}
+\item{kappa}{numeric Shape parameter (kappa=1 for exponential distribution).}
 
-\item{eta}{Rate of loss to follow-up.}
+\item{eta}{numeric Rate of loss to follow-up.}
 
-\item{frac}{Vector of fractions for information time at each look.}
+\item{frac}{numeric Vector of fractions for information time at each look.}
 }
 \value{
 List of cumulative number of events for each stage of combined treatment and control groups along with total number of subjects and maximum total number of events for the trial. It also provides efficacy and futility boundaries of the trial.
@@ -36,5 +36,15 @@ List of cumulative number of events for each stage of combined treatment and con
 This function generates the design parameters of a clinical trial for survival outcome.
 }
 \examples{
-design_surv(m0=20,HR0=1, HR1=0.65, ta=20,tf=40,alpha=0.05,beta=0.1,K=3,kappa=1,eta=0,frac=c(1/2,1))
+design_surv(m0 = 20,
+            hr0 = 1,
+            hr1 = 0.65,
+            ta = 20,
+            tf = 40,
+            alpha = 0.05,
+            beta = 0.1,
+            k = 3,
+            kappa = 1,
+            eta = 0,
+            frac = c(1 / 2, 1))
 }

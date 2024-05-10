@@ -8,10 +8,10 @@ op_fwer_surv(
   m0,
   alpha,
   beta,
-  K,
+  p,
   frac,
-  HR0,
-  HR1,
+  hr0,
+  hr1,
   nsim,
   ta,
   tf,
@@ -21,31 +21,31 @@ op_fwer_surv(
 )
 }
 \arguments{
-\item{m0}{Median survival time in control group.}
+\item{m0}{numeric Median survival time in control group.}
 
-\item{alpha}{Type I error.}
+\item{alpha}{numeric Type I error.}
 
-\item{beta}{Type II error.}
+\item{beta}{numeric Type II error.}
 
-\item{K}{Number of treatment arms.}
+\item{p}{numeric Number of treatment arms.}
 
-\item{frac}{Vector of fractions for information time at each look.}
+\item{frac}{numeric Vector of fractions for information time at each look.}
 
-\item{HR0}{Hazard ratio of ineffective treatment group vs control.}
+\item{hr0}{numeric Hazard ratio of ineffective treatment group vs control.}
 
-\item{HR1}{Hazard ratio of effective treatment group vs control.}
+\item{hr1}{numeric Hazard ratio of effective treatment group vs control.}
 
-\item{nsim}{Number of simulations.}
+\item{nsim}{numeric Number of simulations.}
 
-\item{ta}{Accrual time.}
+\item{ta}{numeric Accrual time.}
 
-\item{tf}{Follow-up time.}
+\item{tf}{numeric Follow-up time.}
 
-\item{kappa}{Shape parameter (Kappa=1 for exponential distribution).}
+\item{kappa}{numeric Shape parameter (Kappa=1 for exponential distribution).}
 
-\item{eta}{Rate of loss to follow-up.}
+\item{eta}{numeric  Rate of loss to follow-up.}
 
-\item{seed}{Random seed number.}
+\item{seed}{numeric Random seed number.}
 }
 \value{
 A list of FWER, stage-wise type I error, stopping probability, probability of futility, average number of events happened per arm, average duration of trial.
@@ -54,5 +54,17 @@ A list of FWER, stage-wise type I error, stopping probability, probability of fu
 Computes FWER and other characteristics for group-sequential MAMS trial for survival outcome.
 }
 \examples{
-op_fwer_surv(20,0.05,0.1,4,c(1/2,1),1,0.75,12,40,20,1,0,12)  
+op_fwer_surv(m0 = 20,
+             alpha = 0.05,
+             beta = 0.1,
+             p = 4,
+             frac = c(1 / 2, 1),
+             hr0 = 1,
+             hr1 = 0.75,
+             nsim = 12,
+             ta = 40,
+             tf = 20,
+             kappa = 1,
+             eta = 0,
+             seed = 12)
 }

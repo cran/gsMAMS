@@ -4,24 +4,24 @@
 \alias{op_power_cont}
 \title{Provides operating characteristics of group sequential MAMS trial for continuous outcome}
 \usage{
-op_power_cont(alpha, beta, K, frac, delta0, delta1, nsim, seed)
+op_power_cont(alpha, beta, p, frac, delta0, delta1, nsim, seed)
 }
 \arguments{
-\item{alpha}{Type I error.}
+\item{alpha}{numeric Type I error.}
 
-\item{beta}{Type II error.}
+\item{beta}{numeric Type II error.}
 
-\item{K}{Number of treatment arms.}
+\item{p}{numeric Number of treatment arms.}
 
-\item{frac}{Vector of fractions for information time at each look.}
+\item{frac}{numeric Vector of fractions for information time at each look.}
 
-\item{delta0}{Standardized effect size in ineffective arm.}
+\item{delta0}{numeric Standardized effect size in ineffective arm.}
 
-\item{delta1}{Standardized effect size in effective arm.}
+\item{delta1}{numeric Standardized effect size in effective arm.}
 
-\item{nsim}{Number of simulations.}
+\item{nsim}{numeric Number of simulations.}
 
-\item{seed}{Random seed number.}
+\item{seed}{numeric Random seed number.}
 }
 \value{
 A list of power, stage-wise probability of success, average sample size used per arm, stopping probability, probability of futility.
@@ -30,5 +30,12 @@ A list of power, stage-wise probability of success, average sample size used per
 Computes power and other characteristics for group-sequential MAMS trial for continuous outcome.
 }
 \examples{
-op_power_cont(0.05,0.1,4,c(1/5,2/5,3/5,4/5,1),0.178,0.545,12,12)
+op_power_cont(alpha = 0.05,
+              beta = 0.1,
+              p = 4,
+              frac = c(1 / 5, 2 / 5, 3 / 5, 4 / 5, 1),
+              delta0 = 0.178,
+              delta1 = 0.545,
+              nsim = 12,
+              seed = 12)
 }

@@ -4,22 +4,22 @@
 \alias{design_ord}
 \title{Design the clinical trial for ordinal outcome}
 \usage{
-design_ord(alpha, beta, K, prob, or0, or, frac)
+design_ord(alpha, beta, k, prob, or0, or, frac)
 }
 \arguments{
-\item{alpha}{Type I error.}
+\item{alpha}{numeric Type I error.}
 
-\item{beta}{Type II error.}
+\item{beta}{numeric Type II error.}
 
-\item{K}{Number of treatment arms.}
+\item{k}{numeric Number of treatment arms.}
 
-\item{prob}{Probability of ordinal outcomes in control group.}
+\item{prob}{numeric Probability of ordinal outcomes in control group.}
 
-\item{or0}{Odds ratio of ineffective treatment group vs control.}
+\item{or0}{numeric Odds ratio of ineffective treatment group vs control.}
 
-\item{or}{Odds ratio of effective treatment group vs control.}
+\item{or}{numeric Odds ratio of effective treatment group vs control.}
 
-\item{frac}{Vector of fractions for information time at each look.}
+\item{frac}{numeric Vector of fractions for information time at each look.}
 }
 \value{
 List of cumulative sample size for each stage of treatment and control groups along with maximum total sample size of the trial. It also provides efficacy and futility boundaries of the trial.
@@ -28,5 +28,11 @@ List of cumulative sample size for each stage of treatment and control groups al
 This function generates the design parameters of a clinical trial for ordinal outcome.
 }
 \examples{
-design_ord(0.05,0.1,K=4,c(0.075, 0.182, 0.319, 0.243, 0.015, 0.166),or=3.06,or0=1.32,c(1/2,1))
+design_ord(alpha = 0.05,
+           beta = 0.1,
+           k = 4,
+           prob = c(0.075, 0.182, 0.319, 0.243, 0.015, 0.166),
+           or = 3.06,
+           or0 = 1.32,
+           frac = c(1 / 2, 1))
 }

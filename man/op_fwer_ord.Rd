@@ -4,26 +4,26 @@
 \alias{op_fwer_ord}
 \title{Provides operating characteristics of group sequential MAMS trial for ordinal outcome under null hypothesis}
 \usage{
-op_fwer_ord(alpha, beta, K, frac, or0, or, nsim, prob, seed)
+op_fwer_ord(alpha, beta, p, frac, or0, or, nsim, prob, seed)
 }
 \arguments{
-\item{alpha}{Type I error.}
+\item{alpha}{numeric Type I error.}
 
-\item{beta}{Type II error.}
+\item{beta}{numeric Type II error.}
 
-\item{K}{Number of treatment arms.}
+\item{p}{numeric Number of treatment arms.}
 
-\item{frac}{Vector of fractions for information time at each look.}
+\item{frac}{numeric vector of fractions for information time at each look.}
 
-\item{or0}{Odds ratio of ineffective treatment group vs control.}
+\item{or0}{numeric Odds ratio of ineffective treatment group vs control.}
 
-\item{or}{Odds ratio of effective treatment group vs control.}
+\item{or}{numeric Odds ratio of effective treatment group vs control.}
 
-\item{nsim}{Number of simulations.}
+\item{nsim}{numeric Number of simulations.}
 
-\item{prob}{Probability of ordinal outcomes in control group.}
+\item{prob}{numeric Probability of ordinal outcomes in control group.}
 
-\item{seed}{Random seed number.}
+\item{seed}{numeric Random seed number.}
 }
 \value{
 A list of FWER, stage-wise type I error, average sample size used per arm, stopping probability, probability of futility.
@@ -32,5 +32,13 @@ A list of FWER, stage-wise type I error, average sample size used per arm, stopp
 Computes FWER and other characteristics for group-sequential MAMS trial for ordinal outcome.
 }
 \examples{
-op_fwer_ord(0.05,0.1,4,c(0.5,1),1.32,3.06,15,c(0.075, 0.182, 0.319, 0.243, 0.015, 0.166),13)  
+op_fwer_ord(alpha = 0.05,
+            beta = 0.1,
+            p = 4,
+            frac = c(0.5, 1),
+            or0 = 1.32,
+            or = 3.06,
+            nsim = 15,
+            prob = c(0.075, 0.182, 0.319, 0.243, 0.015, 0.166),
+            seed = 13)
 }
